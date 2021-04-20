@@ -22,3 +22,13 @@ export function loadMediaDetail (type :string, id: string) {
     })
   }
 }
+
+export function loadMediaSimilar (type :string, id: string) {
+  return async (dispatch: Dispatch) => {
+    const { data: { results } } = await axios.get(`${apiConstants.URL_BASE_API}/${type}/${id}${apiConstants.URL_SIMILAR}${apiConstants.QUERY_API_KEY}${process.env.REACT_APP_APIKEY}`)
+    dispatch({
+      type: mediaActionTypes.LOAD_SIMILAR_MEDIA,
+      data: results
+    })
+  }
+}
