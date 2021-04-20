@@ -5,8 +5,6 @@ export default function mediaReducer (state = [], action: Action) {
   switch (action.type) {
     case mediaActionTypes.LOAD_POPULAR_MEDIA:
       return action.data
-    case mediaActionTypes.LOAD_MEDIA_DETAIL:
-      return []
     case mediaActionTypes.LOAD_SIMILAR_MEDIA:
       return action.data
     default:
