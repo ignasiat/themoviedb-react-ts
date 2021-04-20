@@ -15,7 +15,7 @@ ReactDOM.render(
     <BrowserRouter>
         <Switch>
           <Route path="/" exact component={Dashboard} />
-          <Route path="/detail/:media/:id" component={Detail} />
+          <Route path="/detail/:mediaType/:id" component={Detail} />
         </Switch>
       </BrowserRouter>
     </Provider>
