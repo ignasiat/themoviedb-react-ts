@@ -5,11 +5,11 @@ interface Action {
   data: any
 }
 
-export default function mediaReducer(state = [], action: Action) {
+export default function mediaReducer (state = [], action: Action) {
   switch (action.type) {
     case mediaActionTypes.LOAD_POPULAR_MOVIES:
-      return action.data;
+      return action.data
     default:
-      return state;
+      return state
   }
 }

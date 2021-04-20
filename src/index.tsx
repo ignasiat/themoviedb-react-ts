@@ -1,8 +1,8 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import { App } from './pages/App/';
-import { Provider } from 'react-redux';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import './index.css'
+import { App } from './pages/App/'
+import { Provider } from 'react-redux'
 import configureStore from './redux/store/configureStore'
 
 ReactDOM.render(
@@ -12,4 +12,4 @@ ReactDOM.render(
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')
-);
+)
