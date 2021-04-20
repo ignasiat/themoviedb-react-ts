@@ -46,7 +46,7 @@ const UnconnectedDashboard: React.FC<Props> = ({ media, actions }: any) => {
       {media.length && media.map((element: any) => (
       <li key={element.id}>
         <Link to={`/detail/${typeMedia}/${element.id}`}>
-          <img src={`${apiConstants.URL_BASE_IMAGES}${element.poster_path}`} alt={element.title} />
+          <img src={`${apiConstants.URL_BASE_IMAGES}${element.poster_path}`} alt={typeMedia === constants.movie ? element.title : element.name} />
           <p>{typeMedia === constants.movie ? element.title : element.name}</p>
           <p>{element.vote_average}</p>
         </Link>
