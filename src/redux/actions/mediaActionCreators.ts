@@ -15,7 +15,7 @@ export function loadPopularMedia (mediaType: string) {
 
 export function loadMediaDetail (type :string, id: string) {
   return async (dispatch: Dispatch) => {
-    const data = await axios.get(`${apiConstants.URL_BASE_API}/${type}/${id}${apiConstants.QUERY_API_KEY}${process.env.REACT_APP_APIKEY}`)
+    const { data } = await axios.get(`${apiConstants.URL_BASE_API}/${type}/${id}${apiConstants.QUERY_API_KEY}${process.env.REACT_APP_APIKEY}`)
     dispatch({
       type: mediaActionTypes.LOAD_MEDIA_DETAIL,
       data
