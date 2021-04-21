@@ -1,0 +1,65 @@
+@import "../../styles/mixins";
+
+.media__container {
+  width: 75%;
+  margin: 10px auto;
+  border-radius: 15px;
+  @include shadow();
+  background-color: $color-gray;
+  @include flex(row, flex-start, flex-start);
+  @include for-phone-only() {
+    width: 95%;
+    @include flex(column, flex-start, flex-start);
+  }
+  img {
+    border-radius: 10px;
+    @include for-phone-only() {
+      width: 100%;
+    }
+  }
+  .media__info {
+    @include flex(column, flex-start, flex-start);
+    padding: 10px 20px 0px 20px;
+    h1 {
+      @include font-title();
+      margin-bottom: 15px;
+      @include for-phone-only() {
+        margin-bottom: 5px;
+      }
+    }
+    p {
+      @include font-paragraph();
+      line-height: 1.5;
+      margin-bottom: 15px;
+      @include for-phone-only() {
+        line-height: 1.2;
+        margin-bottom: 5px;
+      }
+    }
+    .media__item--bold {
+      @include font-paragraph-bold();
+    }
+
+    .media__rating {
+      width: 60px !important;
+      height: 60px !important;
+      @include for-phone-only() {
+        width: 40px;
+        heigth: 40px;
+      }
+    }
+
+    .MuiTypography-caption {
+      font-size: 1.2rem;
+      @include for-phone-only() {
+        font-size: 0.7rem;
+      }
+    }
+  }
+}
+
+h2 {
+  @include font-subtitle-bold();
+  text-align: center;
+  padding: 5px;
+}

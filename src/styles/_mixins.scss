@@ -31,7 +31,7 @@
 @mixin font-title() {
   font-family: $font-primary;
   font-weight: 700;
-  font-size: 1.5em;
+  font-size: 1.7em;
 
   @include for-phone-only {
     font-size: 1.3em;
@@ -60,7 +60,7 @@
 
 @mixin font-paragraph-bold() {
   font-family: $font-primary;
-  font-weight: 600 !important;
+  font-weight: 600;
   font-size: 1.2em;
   letter-spacing: 0.2px;
 
