@@ -49,7 +49,7 @@ const UnconnectedDetail:React.FC<Props> = ({ selectedMedia, similarMedia, action
             <p>{selectedMedia.overview}</p>
             <p><span className="media__item--bold">{constants.status}</span> {selectedMedia.status}</p>
             <p><span className="media__item--bold">{constants.vote_count}</span> {selectedMedia.vote_count}</p>
-            <p><span className="media__item--bold">{constants.rating}</span></p>
+            <p className="media__item--bold">{constants.rating}</p>
             <CircularProgressWithLabel className="media__rating" value={selectedMedia.vote_average * 10} />
           </div>
         </div>
