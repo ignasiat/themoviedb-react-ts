@@ -5,6 +5,7 @@
   .title {
     @include flex(row, center, center);
     button {
+      @include button();
       margin: 5px 20px;
     }
     button:first-of-type {
@@ -24,6 +25,7 @@
       img {
         width: 195px;
         border-radius: 10px;
+        margin-bottom: 5px;
       }
       .detail__title {
         width: 95%;
