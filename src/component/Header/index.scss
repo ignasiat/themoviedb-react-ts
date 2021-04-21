@@ -1,0 +1,20 @@
+@import "../../styles/colors";
+@import "../../styles/mixins";
+
+header {
+  background-color: $color-blue-dark;
+  width: 100%;
+  padding: 0px 100px;
+  height: 60px;
+  @include flex(row, space-between, center);
+  img {
+    width: 150px;
+  }
+  .icon {
+    color: $color-blue;
+    font-size: 40px;
+  }
+  @include for-phone-only {
+    padding: 0px 20px;
+  }
+}
