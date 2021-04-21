@@ -8,6 +8,7 @@ import constants from '../../constants'
 import apiConstants from '../../constants/apiConstants'
 import './index.scss'
 import CircularProgressWithLabel from '../../component/CircularProgressWithLabel'
+import MediaElement from '../../constants/mediaInterface'
 
 const mapStateToProps = (state: RootState) => ({
   selectedMedia: state.selectedMedia,
@@ -25,7 +26,7 @@ const mapDispatchToProps = (dispatch:Dispatch) => ({
 type Props = ReturnType<typeof mapStateToProps> &
   ReturnType<typeof mapDispatchToProps>
 
-const UnconnectedDetail:React.FC<Props> = ({ selectedMedia, similarMedia, actions }: any) => {
+const UnconnectedDetail:React.FC<Props> = ({ selectedMedia, similarMedia, actions }: Props) => {
   interface ParamTypes {
     mediaType: string;
     id: string;
@@ -48,25 +49,25 @@ const UnconnectedDetail:React.FC<Props> = ({ selectedMedia, similarMedia, action
             <h1>{mediaType === constants.movie ? selectedMedia.title : selectedMedia.name}</h1>
             <p>{selectedMedia.overview}</p>
             <p><span className="media__item--bold">{constants.status}</span> {selectedMedia.status}</p>
-            <p><span className="media__item--bold">{constants.vote_count}</span> {selectedMedia.vote_count}</p>
+            <p><span className="media__item--bold">{constants.voteCount}</span> {selectedMedia.vote_count}</p>
             <p className="media__item--bold">{constants.rating}</p>
             <CircularProgressWithLabel className="media__rating" value={selectedMedia.vote_average * 10} />
           </div>
         </div>
-        <h2>{constants.similar_media}</h2>
+        <h2>{constants.similarMedia}</h2>
         <ul>
         {similarMedia.length
-          ? similarMedia.map((element: any) => (
+          ? similarMedia.map((element: MediaElement) => (
             <li key={element.id}>
               <a href={`/detail/${mediaType}/${element.id}`}>
                 < img src={`${apiConstants.URL_BASE_IMAGES}${element.poster_path}`} alt={mediaType === constants.movie ? element.title : element.name} />
               </a>
             </li>
           ))
-          : (<li>{constants.no_data_similar}</li>) }
+          : (<li>{constants.noDataSimilar}</li>) }
         </ul>
      </>)
-      : (<p>{constants.no_selected_media}</p>)}
+      : (<p>{constants.noSelectedMedia}</p>)}
   </main>)
 }
 

@@ -10,6 +10,7 @@ import Theaters from '@material-ui/icons/TheatersOutlined'
 import Tv from '@material-ui/icons/TvOutlined'
 import CircularProgressWithLabel from '../../component/CircularProgressWithLabel'
 import './index.scss'
+import MediaElement from '../../constants/mediaInterface'
 
 const mapStateToProps = (state: RootState) => ({
   media: state.media
@@ -25,7 +26,7 @@ const mapDispatchToProps = (dispatch:Dispatch) => ({
 type Props = ReturnType<typeof mapStateToProps> &
   ReturnType<typeof mapDispatchToProps>;
 
-const UnconnectedDashboard: React.FC<Props> = ({ media, actions }: any) => {
+const UnconnectedDashboard: React.FC<Props> = ({ media, actions }: Props) => {
   const [typeMedia, setTypeMedia] = useState<string>(constants.movie)
 
   useEffect(() => {
@@ -47,7 +48,7 @@ const UnconnectedDashboard: React.FC<Props> = ({ media, actions }: any) => {
         <button type="button" onClick={() => mediaSelect(constants.tv)}><Tv /></button>
       </div>
       <ul>
-      {media.length && media.map((element: any) => (
+      {media.length && media.map((element: MediaElement) => (
       <li key={element.id}>
         <Link to={`/detail/${typeMedia}/${element.id}`}>
           <img src={`${apiConstants.URL_BASE_IMAGES}${element.poster_path}`} alt={typeMedia === constants.movie ? element.title : element.name} />
