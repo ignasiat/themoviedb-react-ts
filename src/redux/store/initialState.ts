@@ -1,4 +1,5 @@
 export default {
   media: [],
-  selectedMedia: null
+  selectedMedia: null,
+  similarMedia: []
 }
