@@ -8,6 +8,8 @@ import apiConstants from '../../constants/apiConstants'
 import { Link } from 'react-router-dom'
 import Theaters from '@material-ui/icons/TheatersOutlined'
 import Tv from '@material-ui/icons/TvOutlined'
+import CircularProgressWithLabel from '../../component/CircularProgressWithLabel'
+import './index.scss'
 
 const mapStateToProps = (state: RootState) => ({
   media: state.media
@@ -39,16 +41,20 @@ const UnconnectedDashboard: React.FC<Props> = ({ media, actions }: any) => {
 
   return (
     <main>
-      <h1>Dashboard</h1>
-      <button type="button" onClick={() => mediaSelect(constants.movie)}><Theaters /></button>
-      <button type="button" onClick={() => mediaSelect(constants.tv)}><Tv /></button>
+      <div className="title">
+        <h1>{typeMedia.toUpperCase()}</h1>
+        <button type="button" onClick={() => mediaSelect(constants.movie)}><Theaters /></button>
+        <button type="button" onClick={() => mediaSelect(constants.tv)}><Tv /></button>
+      </div>
       <ul>
       {media.length && media.map((element: any) => (
       <li key={element.id}>
         <Link to={`/detail/${typeMedia}/${element.id}`}>
           <img src={`${apiConstants.URL_BASE_IMAGES}${element.poster_path}`} alt={typeMedia === constants.movie ? element.title : element.name} />
-          <p>{typeMedia === constants.movie ? element.title : element.name}</p>
-          <p>{element.vote_average}</p>
+          <div className="detail__title">
+            <h3>{typeMedia === constants.movie ? element.title : element.name}</h3>
+            <CircularProgressWithLabel value={element.vote_average * 10} />
+          </div>
         </Link>
         </li>))}
       </ul>
