@@ -5,6 +5,7 @@
   .title {
     @include flex(row, center, center);
     button {
+      @include button();
       margin: 5px 20px;
     }
     button:first-of-type {
