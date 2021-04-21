@@ -9,6 +9,7 @@ import {
 import { Dashboard } from './pages/Dashboard'
 import { Detail } from './pages/Detail'
 import Header from './component/Header'
+import { NotFound } from './pages/NotFound'
 
 ReactDOM.render(
   <React.StrictMode>
@@ -18,6 +19,7 @@ ReactDOM.render(
         <Switch>
           <Route path="/" exact component={Dashboard} />
           <Route path="/detail/:mediaType/:id" component={Detail} />
+          <Route component={NotFound} />
         </Switch>
       </BrowserRouter>
     </Provider>
