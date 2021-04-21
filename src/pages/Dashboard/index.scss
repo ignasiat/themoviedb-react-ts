@@ -1,0 +1,38 @@
+@import "../../styles/mixins";
+
+* {
+  font-family: $font-primary;
+  .title {
+    @include flex(row, center, center);
+    button {
+      margin: 5px 20px;
+    }
+    button:first-of-type {
+      margin-left: 40px;
+    }
+  }
+  ul {
+    list-style-type: none;
+    @include flex(row, center, flex-start);
+    flex-wrap: wrap;
+    li {
+      width: 200px;
+      margin: 5px;
+      a {
+        text-decoration: none;
+      }
+      img {
+        width: 195px;
+        border-radius: 10px;
+      }
+      .detail__title {
+        width: 95%;
+        margin: 0 auto;
+        @include flex(row, space-between, flex-start);
+        h3 {
+          color: $color-black;
+        }
+      }
+    }
+  }
+}

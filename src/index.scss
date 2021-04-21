@@ -10,7 +10,7 @@
 
 main {
   width: 100%;
-  padding: 50px;
+  padding: 20px;
 
   @include for-phone-only {
     padding: 10px;
