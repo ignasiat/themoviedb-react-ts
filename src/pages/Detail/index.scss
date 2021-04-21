@@ -13,6 +13,7 @@
   }
   img {
     border-radius: 10px;
+    max-width: 300px;
     @include for-phone-only() {
       width: 100%;
     }

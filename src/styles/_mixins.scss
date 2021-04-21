@@ -61,22 +61,22 @@
 @mixin font-paragraph-bold() {
   font-family: $font-primary;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 18px;
   letter-spacing: 0.2px;
 
   @include for-phone-only {
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 
 @mixin font-paragraph() {
   font-family: $font-primary;
   font-weight: 300;
-  font-size: 20px;
+  font-size: 18px;
   letter-spacing: 0.2px;
 
   @include for-phone-only {
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 
@@ -88,7 +88,7 @@
   color: $color-white;
   background-color: $color-blue;
   border-radius: 4px;
-  font-size: 0.9em !important;
+  font-size: 0.9em;
 
   &:hover {
     background-color: $color-blue-dark;
