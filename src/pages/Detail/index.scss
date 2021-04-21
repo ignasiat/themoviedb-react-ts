@@ -35,9 +35,9 @@
         line-height: 1.2;
         margin-bottom: 5px;
       }
-    }
-    .media__item--bold {
-      @include font-paragraph-bold();
+      .media__item--bold {
+        @include font-paragraph-bold();
+      }
     }
 
     .media__rating {
