@@ -11,18 +11,23 @@ import Detail from './pages/Detail'
 import Header from './component/Header'
 import NotFound from './pages/NotFound'
 
-ReactDOM.render(
-  <React.StrictMode>
-    <Provider store={configureStore}>
-    <BrowserRouter>
-      <Header />
-        <Switch>
-          <Route path="/" exact component={Dashboard} />
-          <Route path="/detail/:mediaType/:id" component={Detail} />
-          <Route component={NotFound} />
-        </Switch>
-      </BrowserRouter>
-    </Provider>
-  </React.StrictMode>,
-  document.getElementById('root')
-)
+export default function renderToDom () {
+  const root = document.getElementById('root')
+  if (root !== null) {
+    ReactDOM.render(
+      <React.StrictMode>
+      <Provider store={configureStore}>
+      <BrowserRouter>
+        <Header />
+          <Switch>
+            <Route path="/" exact component={Dashboard} />
+            <Route path="/detail/:mediaType/:id" component={Detail} />
+            <Route component={NotFound} />
+          </Switch>
+        </BrowserRouter>
+      </Provider>
+    </React.StrictMode>, root
+    )
+  }
+}
+renderToDom()
