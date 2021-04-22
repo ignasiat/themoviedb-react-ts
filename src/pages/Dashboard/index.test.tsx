@@ -1,6 +1,6 @@
 import React from 'react'
 import { act, render, fireEvent } from '@testing-library/react'
-import { Dashboard } from '.'
+import Dashboard from '.'
 import store from '../../redux/store/configureStore'
 import { Provider } from 'react-redux'
 import constants from '../../constants'
