@@ -71,4 +71,6 @@ const UnconnectedDetail:React.FC<Props> = ({ selectedMedia, similarMedia, action
   </main>)
 }
 
-export const Detail = connect(mapStateToProps, mapDispatchToProps)(UnconnectedDetail)
+const Detail = connect(mapStateToProps, mapDispatchToProps)(UnconnectedDetail)
+
+export default Detail

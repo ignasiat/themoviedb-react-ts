@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators, Dispatch } from 'redux'
-import { loadPopularMedia } from '../../redux/actions/mediaActionCreators'
+import { loadMediaPopular } from '../../redux/actions/mediaActionCreators'
 import { RootState } from '../../redux/reducers'
 import constants from '../../constants'
 import apiConstants from '../../constants/apiConstants'
@@ -19,7 +19,7 @@ const mapStateToProps = (state: RootState) => ({
 const mapDispatchToProps = (dispatch:Dispatch) => ({
   actions:
     bindActionCreators({
-      loadPopularMedia
+      loadMediaPopular
     }, dispatch)
 })
 
@@ -30,13 +30,13 @@ const UnconnectedDashboard: React.FC<Props> = ({ media, actions }: Props) => {
   const [typeMedia, setTypeMedia] = useState<string>(constants.movie)
 
   useEffect(() => {
-    actions.loadPopularMedia(constants.movie)
+    actions.loadMediaPopular(constants.movie)
   }, [])
 
   const mediaSelect = (newMedia : string) => {
     if (newMedia !== typeMedia) {
       setTypeMedia(newMedia)
-      actions.loadPopularMedia(newMedia)
+      actions.loadMediaPopular(newMedia)
     }
   }
 
@@ -63,4 +63,6 @@ const UnconnectedDashboard: React.FC<Props> = ({ media, actions }: Props) => {
   )
 }
 
-export const Dashboard = connect(mapStateToProps, mapDispatchToProps)(UnconnectedDashboard)
+const Dashboard = connect(mapStateToProps, mapDispatchToProps)(UnconnectedDashboard)
+
+export default Dashboard

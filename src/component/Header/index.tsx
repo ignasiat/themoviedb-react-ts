@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import logo from '../../assets/tmbd.svg'
 import './index.scss'
 
-const Header: React.FC<any> = () => {
+const Header: React.FC = () => {
   return (
     <header>
       <img src={logo} alt="The movie database"></img>
