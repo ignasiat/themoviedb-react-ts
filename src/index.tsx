@@ -6,10 +6,10 @@ import configureStore from './redux/store/configureStore'
 import {
   BrowserRouter, Route, Switch
 } from 'react-router-dom'
-import { Dashboard } from './pages/Dashboard'
-import { Detail } from './pages/Detail'
+import Dashboard from './pages/Dashboard'
+import Detail from './pages/Detail'
 import Header from './component/Header'
-import { NotFound } from './pages/NotFound'
+import NotFound from './pages/NotFound'
 
 ReactDOM.render(
   <React.StrictMode>
